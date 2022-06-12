@@ -6,7 +6,7 @@
   let itemsValue;
 
   const toggleTheme = () => {
-    $theme = $theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
+    $theme = $theme === THEMES.DARK ? THEMES.DARK : THEMES.DARK;
   };
 
   items.subscribe((value) => {

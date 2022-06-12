@@ -2,8 +2,7 @@ import { browser } from '$app/env';
 import { writable } from 'svelte/store';
 
 export const THEMES = {
-    DARK: "dark",
-    LIGHT: "light",
+    DARK: "cupcake"
 };
 
 // if SSR (not browser rendered) the theme will be LIGHT
@@ -11,7 +10,7 @@ export const THEMES = {
 // else check if user has DARK color-scheme preference in browser
 // if not use LIGHT
 
-const initialValue = browser ? window.localStorage.getItem('theme') ?? ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? THEMES.DARK : THEMES.LIGHT) : THEMES.LIGHT;
+const initialValue = browser ? window.localStorage.getItem('theme') ?? ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? THEMES.DARK : THEMES.DARK) : THEMES.DARK;
 
 export const theme = writable(initialValue);
 
